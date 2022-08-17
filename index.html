@@ -46,14 +46,22 @@
         window.insertar_al_inicio_lstCirSimpLig=insertar_al_inicio_lstCirSimpLig;
 
         //LISTA DOBLEMENTE LIGADA
-        import {insertar_al_inicio as insertar_al_inicio_lstDobLig} from './lib/lstDobLig/index.js';
-        import {insertar_antes_x as insertar_antes_x_lstDobLig} from './lib/lstDobLig/index.js';
+        import {inserta_inicio as inserta_inicio_x_lstDobLig} from './lib/lstDobLig/index.js';
+        import {inserta_final as inserta_final_x_lstDobLig} from './lib/lstDobLig/index.js';
+        import {inserta_antes_X as inserta_antes_X_lstDobLig} from './lib/lstDobLig/index.js';
+        import {inserta_despues_X as inserta_despues_X_lstDobLig} from './lib/lstDobLig/index.js';
         import {elimina_inicio as elimina_inicio_lstDobLig} from './lib/lstDobLig/index.js';
-        import {insertar_despues_x as insertar_despues_x_lstDobLig} from './lib/lstDobLig/index.js';
-        window.insertar_al_inicio_lstDobLig=insertar_al_inicio_lstDobLig;
-        window.insertar_antes_x_lstDobLig=insertar_antes_x_lstDobLig;
+        import {eliminar_ultimo as elimina_ultimo_lstDobLig} from './lib/lstDobLig/index.js';
+        import {eliminar_antes_X as eliminar_antes_X_lstDobLig} from './lib/lstDobLig/index.js';
+        import {eliminar_x as eliminar_x_lstDobLig} from './lib/lstDobLig/index.js';
+        window.inserta_inicio_x_lstDobLig=inserta_inicio_x_lstDobLig;
+        window.inserta_final_x_lstDobLig=inserta_final_x_lstDobLig;
+        window.inserta_antes_X_lstDobLig=inserta_antes_X_lstDobLig;
+        window.inserta_despues_X_lstDobLig=inserta_despues_X_lstDobLig;
         window.elimina_inicio_lstDobLig=elimina_inicio_lstDobLig;
-        window.insertar_despues_x_lstDobLig=insertar_despues_x_lstDobLig;
+        window.elimina_ultimo_lstDobLig=elimina_ultimo_lstDobLig;
+        window.eliminar_antes_X_lstDobLig=eliminar_antes_X_lstDobLig;
+        window.eliminar_x_lstDobLig=eliminar_x_lstDobLig;
 
 
         //EVENTOS DE MENU PARA MANEJAR HISTORIAL
@@ -61,7 +69,6 @@
         window.clickListaSimplementeEnlazada=clickListaSimplementeEnlazada;
         window.clickListaCirsularSimplementeEnlazada=clickListaCirsularSimplementeEnlazada;
         window.clickListaDoblementeEnlazada=clickListaDoblementeEnlazada;
-    
     </script>
 
 </head>
@@ -147,46 +154,6 @@
         </div>
     </div>
 </div>
-
-<div id="vista2" style="display:none">
-
-    <div class="container">
-        <div class="row text-center">
-            <div class="col" style="margin-top:20px">
-                <h4>LISTA CIRCULAR SIMPLEMENTE LIGADA</h4> 
-            </div>
-        </div>
-    </div>
-
-    <div style="margin: 10px">   
-        <canvas id="tutorial2"></canvas>
-    </div>
-
-    <div  class="container">
-        <div class="row text-center">
-            <div class="col-xs-12 col-sm-12 col-md-6 ">
-                    <button onclick="insertar_al_inicio_lstCirSimpLig();">INSERTAR AL INICIO</button>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                    <button onclick="">INSERTAR AL FINAL</button>
-            </div>
-        </div>
-        <div class="row text-center">
-                <div class="col-xs-12 col-sm-12 col-md-6">
-                    <button onclick="">INSERTAR ANTES DE X</button>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6">
-                    <button onclick="">ELIMINAR AL INICIO</button>
-                </div>
-        </div>
-        <div class="row text-center">
-            <div class="col">
-                <button onclick="window.history.back()">MENU</button>
-            </div>
-        </div>
-    </div>
-
-</div>
 <div id="vista3" style="display:none">
 
     <div class="container">
@@ -201,31 +168,44 @@
         <canvas id="tutorial3"></canvas>
     </div>
 
-    <div  class="container">
-        <div class="row text-center">
+        <div class="container">
+            <div class="row text-center">
             <div class="col-xs-12 col-sm-12 col-md-6 ">
-                    <button onclick="insertar_al_inicio_lstDobLig()">INSERTAR AL INICIO</button>
+                <button onclick="inserta_inicio_x_lstDobLig()">INSERTAR AL INICIO</button>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6">
-                    <button onclick="insertar_despues_x_lstDobLig()">INSERTAR DESPUES DE X</button>
+                <button onclick="inserta_final_x_lstDobLig()">INSERTAR AL FINAL</button>
             </div>
-        </div>
-        <div class="row text-center">
+            </div>
+            <div class="row text-center">
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <button onclick="insertar_antes_x_lstDobLig()">INSERTAR ANTES DE X</button>
+                    <button onclick="inserta_antes_X_lstDobLig()">INSERTAR ANTES DE X</button>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <button onclick="inserta_despues_X_lstDobLig()">INSERTAR DESPUES DE X</button>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <button onclick="elimina_inicio_lstDobLig()">ELIMINAR AL INICIO</button>
                 </div>
-        </div>
-        <div class="row text-center">
-            <div class="col">
-                <button onclick="window.history.back()">MENU</button>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <button onclick="elimina_ultimo_lstDobLig()">ELIMINAR AL ULTIMO</button>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 ">
+                    <button onclick="eliminar_antes_X_lstDobLig()">ELIMINAR ANTES DE X</button>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 ">
+                    <button onclick="eliminar_x_lstDobLig()">ELIMINAR X</button>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <button onclick="window.history.back()">MENU</button>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
+
 
 
 </body>
